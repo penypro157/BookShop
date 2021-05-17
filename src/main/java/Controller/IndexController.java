@@ -5,14 +5,19 @@
  */
 package Controller;
 
+//import Service.HelloService;
 import Service.HelloService;
-import javax.annotation.ManagedBean;
+import java.io.Serializable;
+import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 
-@ManagedBean
-@SessionScoped
-public class HelloBean {
+//@ManagedBean(value ="helloBean")
+//@RequestScoped
+@ManagedBean(name="index")
+@RequestScoped
+public class IndexController {
   @ManagedProperty(value = "#{helloService}")
   HelloService helloService;
   private String name;
